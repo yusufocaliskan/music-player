@@ -15,6 +15,7 @@ function ListInput(props) {
 
   return (
     <Modal visible={props.visible} animationType="slide">
+      <Image source={require("../image/target.jpg")} />
       <View style={styles.InputContainer}>
         <TextInput
           onChangeText={getTheText}
