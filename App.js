@@ -14,6 +14,7 @@ export default function App() {
       ...currentList,
       { text: entredListText, key: Math.random().toString() },
     ]);
+    modalSetClosed();
   }
 
   function deleteItem(id) {
@@ -26,11 +27,19 @@ export default function App() {
     setModalVisible(true);
   }
 
+  function modalSetClosed() {
+    setModalVisible(false);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Add New Item" onPress={showModalHandler} />
 
-      <ListInput visible={modalIsVisible} onAddList={onButtonPressed} />
+      <ListInput
+        modalClosed={modalSetClosed}
+        visible={modalIsVisible}
+        onAddList={onButtonPressed}
+      />
 
       <View style={styles.listContainer}>
         <FlatList

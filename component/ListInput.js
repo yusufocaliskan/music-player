@@ -24,11 +24,11 @@ function ListInput(props) {
         />
 
         <View style={styles.buttonContainer}>
-          <View>
-            <Button title="Cancel" onPress={addGoalHandler} />
+          <View style={styles.button}>
+            <Button title="Add Item" onPress={addGoalHandler} />
           </View>
-          <View>
-            <Button title="Add Item" />
+          <View style={styles.button}>
+            <Button title="Close" onPress={props.modalClosed} />
           </View>
         </View>
       </View>
@@ -57,5 +57,12 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     flexDirection: "row",
+    marginTop: 20,
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+  },
+
+  button: {
+    width: 100,
   },
 });
