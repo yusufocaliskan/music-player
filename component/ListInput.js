@@ -1,4 +1,11 @@
-import { Modal, View, TextInput, Button, StyleSheet } from "react-native";
+import {
+  Image,
+  Modal,
+  View,
+  TextInput,
+  Button,
+  StyleSheet,
+} from "react-native";
 import { useState } from "react";
 
 function ListInput(props) {
@@ -15,8 +22,8 @@ function ListInput(props) {
 
   return (
     <Modal visible={props.visible} animationType="slide">
-      <Image source={require("../image/target.jpg")} />
       <View style={styles.InputContainer}>
+        <Image style={styles.logo} source={require("../image/target.jpg")} />
         <TextInput
           onChangeText={getTheText}
           style={styles.TextInput}
@@ -46,24 +53,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
+    backgroundColor: "#FCDEC6",
     marginBottom: 25,
+  },
+  logo: {
+    width: 200,
+    height: 200,
   },
 
   TextInput: {
     borderWidth: 1,
     borderColor: "#ccc",
-    width: "70%",
+    backgroundColor: "#ccc",
+    width: "90%",
     padding: 7,
   },
-
+  modal: {
+    backgroundColor: "#FCDEC6",
+  },
   buttonContainer: {
     flexDirection: "row",
     marginTop: 20,
     justifyContent: "space-between",
-    marginHorizontal: 20,
   },
 
   button: {
+    marginHorizontal: 20,
     width: 100,
   },
 });
